@@ -88,14 +88,17 @@ public class Soal2 {
 			System.out.println(Arrays.toString(total));
 
 			for (k = 0; k < 9; k++) {
-				if (total[k] < duit) {
-					hasilk = kodek[k];
-					hasilb = kodeb[k];
-					hasilt = total[k];
-				}
+				hasilk = kodek[k];
+				hasilb = kodeb[k];
+				hasilt = total[k];
 			}
-			System.out.println(
-					" Rekomendasi: Kacamata " + hasilk + " dan Baju " + hasilb + " dengan Total Belanja: " + hasilt);
+			if (hasilt > duit) {
+				System.out.println("Dana tidak mencukupi");
+			} else {
+				System.out.println(" Rekomendasi: Kacamata " + hasilk + " dan Baju " + hasilb
+						+ " dengan Total Belanja: " + hasilt);
+			}
+
 			System.out.println("Ingin mencoba lagi?(Y/N)");
 			String cobalagi = input.next();
 			if (cobalagi.equalsIgnoreCase("y")) {
